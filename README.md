@@ -1,4 +1,4 @@
-RTII
+SMC-PD
 ====
 
 PD toolbox for MED4 SMC
