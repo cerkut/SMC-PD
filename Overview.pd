@@ -1,4 +1,4 @@
-#N canvas 486 74 895 670 10;
+#N canvas 256 -958 895 670 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
@@ -48,10 +48,12 @@
 ;
 #X obj 561 59 declare -path filterview;
 #X obj 510 88 filterview-help;
-#X obj 508 342 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
+#X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
 0;
 #X obj 757 77 declare -path SMC10;
 #X obj 509 388 01-MyPluck;
 #X obj 509 413 03-SNAC;
 #X obj 114 635 pddplink http://www.katjaas.nl;
 #X text 27 634 SNAC (SMC10):;
+#X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
+0;
