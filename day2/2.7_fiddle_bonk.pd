@@ -1,0 +1,82 @@
+#N canvas 65 22 1160 531 10;
+#X msg 279 -61 \; pd dsp \$1 \;;
+#X obj 279 -83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 318 61 number of pitch outlets (1-3 \, default 1);
+#X text 318 83 number of peaks to find (1-100 \, default 20);
+#X text 318 105 number of peaks to output (default 0.);
+#X text 194 71 ------ arguments:;
+#X text 318 39 window size (128-2048 \, default 1024);
+#X obj 70 3 adc~;
+#X obj 110 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 108 180 attack;
+#X obj 165 169 unpack;
+#X floatatom 165 244 0 0 0 0 - - -;
+#X floatatom 218 204 0 0 0 0 - - -;
+#X text 165 261 raw pitch;
+#X text 216 220 raw amplitude;
+#X floatatom 6 164 0 0 0 0 - - -;
+#X text 2 180 cooked pitch;
+#X floatatom 317 197 0 0 0 0 - - -;
+#X text 315 212 amplitude dB;
+#X obj 670 240 bonk~;
+#X obj 10 -84 cnv 15 200 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 29 -82 FIDDLE;
+#X obj 669 -81 cnv 15 200 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 688 -79 BONK;
+#X text 11 -55 Pitch detection;
+#X obj 672 -3 adc~;
+#X obj 697 266 unpack f f f;
+#X floatatom 697 300 5 0 0 0 - - -;
+#X msg 805 -4 debounce 0;
+#X floatatom 739 301 5 0 0 0 - - -;
+#X floatatom 780 302 5 0 0 0 - - -;
+#X msg 843 198 forget;
+#X msg 885 -4 minvel 40;
+#X msg 713 -3 thresh 6 50;
+#X msg 844 78 learn 10;
+#X text 902 84 The number is the amount of;
+#X text 903 96 times you will hit each instrument;
+#X msg 844 150 learn 0;
+#X text 901 150 exit learn mode;
+#X text 895 197 forget the instruments;
+#X text 956 -10 various settings;
+#X text 955 4 see the help file for details;
+#X obj 697 338 sel 0 1 2;
+#X obj 697 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 731 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 714 382 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 760 341 selects the instrumet;
+#X text 619 300 instrument #;
+#X text 667 -53 Attack detection for multiple instruments.;
+#X text 902 67 Teach bonk the instruments.;
+#X obj 71 70 fiddle~ 1024 1 100 0;
+#X connect 1 0 0 0;
+#X connect 7 0 50 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 19 1 26 0;
+#X connect 25 0 19 0;
+#X connect 26 0 27 0;
+#X connect 26 1 29 0;
+#X connect 26 2 30 0;
+#X connect 27 0 42 0;
+#X connect 28 0 19 0;
+#X connect 31 0 19 0;
+#X connect 32 0 19 0;
+#X connect 33 0 19 0;
+#X connect 34 0 19 0;
+#X connect 37 0 19 0;
+#X connect 42 0 43 0;
+#X connect 42 1 45 0;
+#X connect 42 2 44 0;
+#X connect 50 0 15 0;
+#X connect 50 1 8 0;
+#X connect 50 2 10 0;
+#X connect 50 3 17 0;

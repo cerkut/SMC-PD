@@ -1,0 +1,28 @@
+#N canvas 827 94 859 637 10;
+#X obj 57 80 inlet;
+#X obj 59 223 outlet;
+#X text 94 80 <- [inlet] allows for data;
+#X text 106 96 to be passed into the subpatch;
+#X text 103 223 <- [outlet] allows for data;
+#X text 122 239 to leave the subpatch;
+#X obj 45 36 cnv 15 600 20 empty empty empty 20 12 0 14 -33173 -262144
+0;
+#X obj 45 184 cnv 15 600 20 empty empty empty 20 12 0 14 -33173 -262144
+0;
+#X text 316 187 [outlets];
+#X text 316 39 [inlets];
+#X obj 373 76 inlet~;
+#X text 413 75 <- [inlet~] same as [inlet];
+#X text 433 91 but for audio;
+#X obj 374 223 outlet~;
+#X text 441 238 but for audio;
+#X text 421 222 <- [outlet~] same as [outlet];
+#X text 290 319 NOTE!!! - inlets an outlets are used in left to right
+order when viewed in main patch;
+#X obj 256 391 cnv 15 400 100 empty empty empty 20 12 0 14 -175625
+-66577 0;
+#X text 293 435 Media Lab \, Department of Media;
+#X text 292 421 Sound and Music Computing - AAU-CPH Credits: SOPI Research
+Group;
+#X text 294 450 Aalto University School of Arts \, Design and Architecture
+;

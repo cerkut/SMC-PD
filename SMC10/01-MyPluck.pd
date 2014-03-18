@@ -1,0 +1,67 @@
+#N canvas 112 146 551 350 10;
+#N canvas 436 85 468 358 delay-writer 0;
+#X obj 33 218 inlet~;
+#X obj 33 324 outlet~;
+#X obj 34 279 +~;
+#X obj 112 216 inlet;
+#X text 27 5 Because of the feedback \, the delwrite~ has to be computed
+after the delread~. So we set the blocksize to 1 to minimize the resulting
+delay.;
+#X text 274 203 this object sets the;
+#X text 273 220 block size for audio;
+#X text 272 239 computations in this;
+#X obj 112 239 delread~ G04-del;
+#X obj 45 300 delwrite~ G04-del 1000;
+#X text 26 181 incoming;
+#X text 28 196 pulses;
+#X text 112 180 delay;
+#X text 113 195 time;
+#X text 272 257 window. Must be a;
+#X text 272 276 power of two.;
+#X text 24 58 The smaller the blocksize the more expensive the computations
+are \, so don't reduce it lower than you have to. Also \, it's a good
+idea to isolate the portion of the patch that requires the smaller
+block size \, and only run that portion that way. Here \, the pulses
+that excite the delay line are computed outside this window \, and
+the output level control as well.;
+#X obj 276 181 block~ 1;
+#X obj 111 262 biquad~ 0 0 0.96 0.04 0;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 9 0;
+#X connect 3 0 8 0;
+#X connect 8 0 18 0;
+#X connect 18 0 2 1;
+#X restore -75 217 pd delay-writer;
+#X obj 55 181 expr 1000/$f1;
+#X obj 55 155 mtof;
+#X msg -75 152 1;
+#X msg -36 152 0;
+#X obj -75 51 metro 500;
+#X obj 55 101 random 60;
+#X obj -75 25 loadbang;
+#X obj 55 127 + 30;
+#X text 32 216 <-- here is the delay loop;
+#X obj -75 246 output~;
+#X obj -75 184 vline~;
+#X text -152 89 this makes;
+#X text -153 107 a rectangular;
+#X text -154 145 long.;
+#X text 155 163 length of delay line is;
+#X text 157 180 1000/(frequency);
+#X obj -36 126 del 1;
+#X text -153 125 pulse 1 msec;
+#X connect 0 0 10 0;
+#X connect 0 0 10 1;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 0;
+#X connect 5 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 17 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 2 0;
+#X connect 11 0 0 0;
+#X connect 17 0 4 0;

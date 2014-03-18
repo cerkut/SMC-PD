@@ -1,0 +1,67 @@
+#N canvas 589 80 511 575 10;
+#X obj 307 259 cnv 15 170 180 empty empty empty 20 12 0 14 -196506
+-66577 0;
+#X obj 30 98 cnv 15 470 150 empty empty empty 20 12 0 14 -196506 -66577
+0;
+#X obj 119 258 cnv 15 170 180 empty empty empty 20 12 0 14 -196506
+-66577 0;
+#X floatatom 60 209 5 0 0 0 - - -;
+#X floatatom 90 190 5 0 0 0 - - -;
+#X symbolatom 164 144 10 0 0 0 - - -;
+#X floatatom 121 167 5 0 0 0 - - -;
+#X text 159 169 socket number;
+#X obj 128 365 netclient;
+#X msg 167 334 disconnect;
+#X floatatom 187 387 5 0 0 0 - - -;
+#X msg 144 286 send \$1;
+#X obj 341 363 netclient;
+#X msg 358 333 disconnect;
+#X floatatom 398 384 5 0 0 0 - - -;
+#X msg 341 293 send \$1;
+#X obj 341 406 print client2;
+#X floatatom 143 268 5 0 0 0 - - -;
+#X floatatom 340 275 5 0 0 0 - - -;
+#X obj 60 143 netserver 3001;
+#X msg 127 313 connect localhost 3001;
+#X msg 310 314 connect localhost 3001;
+#X msg 61 110 broadcast hello kuva!;
+#X text 99 211 data;
+#X text 132 191 connections;
+#X text 163 129 IP address;
+#X obj 128 409 print client1;
+#X text 301 128 netserver connects;
+#X text 300 140 different clients over;
+#X text 300 154 a network \, broadcasting;
+#X text 300 166 stream of information;
+#X text 299 177 through a server;
+#X text 12 37 [netserver] and [netclient] gives you a bi-directional
+connection so you can send data back and forth thru it. Also \, [netserver]
+helps you manage multiple connections.;
+#X text 14 19 netserver_and_netclient;
+#X text 425 233 server;
+#X text 431 422 client;
+#X text 245 420 client;
+#X obj 90 453 cnv 15 400 100 empty empty empty 20 12 0 14 -33173 -262144
+0;
+#X text 127 497 Media Lab \, Department of Media;
+#X text 126 483 Sound and Music Computing - AAU-CPH Credits: SOPI Research
+Group;
+#X text 128 512 Aalto University School of Arts \, Design and Architecture
+;
+#X connect 8 0 26 0;
+#X connect 8 1 10 0;
+#X connect 9 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 16 0;
+#X connect 12 1 14 0;
+#X connect 13 0 12 0;
+#X connect 15 0 12 0;
+#X connect 17 0 11 0;
+#X connect 18 0 15 0;
+#X connect 19 0 3 0;
+#X connect 19 1 4 0;
+#X connect 19 2 6 0;
+#X connect 19 3 5 0;
+#X connect 20 0 8 0;
+#X connect 21 0 12 0;
+#X connect 22 0 19 0;

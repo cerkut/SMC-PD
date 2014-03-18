@@ -1,0 +1,35 @@
+#N canvas 2 22 502 461 10;
+#X obj 112 346 vline~;
+#X obj 112 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -258113
+-4034 -1 0 1;
+#X obj 112 374 outlet~;
+#X obj 112 49 inlet;
+#X obj 112 305 pack f f;
+#X obj 276 246 f \$1;
+#X floatatom 379 287 5 0 0 0 - - -;
+#X obj 276 147 loadbang;
+#X obj 324 245 f \$2;
+#X obj 370 246 symbol \$3;
+#X msg 160 55 0.5;
+#X msg 196 54 0;
+#X obj 145 126 vsl 15 128 0 0 0 0 empty slider empty 0 -9 0 10 -258113
+-4034 -1 -2.14748e+09 1;
+#X msg 277 320 \; slider range 0 \$1;
+#X floatatom 182 266 5 0 0 0 - - -;
+#X obj 284 280 t f f;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 5 0 15 0;
+#X connect 7 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;
+#X connect 12 0 4 1;
+#X connect 12 0 14 0;
+#X connect 15 0 12 0;
+#X connect 15 1 13 0;
+#X coords 0 -1 1 1 69 170 1 100 100;

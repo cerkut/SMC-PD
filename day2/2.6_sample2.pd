@@ -1,0 +1,182 @@
+#N canvas 170 22 901 852 10;
+#X obj 31 -10 cnv 15 800 40 empty empty SAMPLE_MANIPULATION 20 12 0
+14 -33173 -262144 0;
+#X obj 37 111 openpanel;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array soundfile 231492 float 2;
+#X coords 0 1 231492 -1 200 140 1;
+#X restore 395 74 graph;
+#X obj 37 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 37 156 soundfiler;
+#X floatatom 37 178 7 0 0 1 Number_of_samples_in_file - -;
+#X obj 159 207 / 44.1;
+#X floatatom 159 232 7 0 0 1 Sound_File_length_in_ms - -;
+#X msg 188 254 \; dura range 0 \$1 \;;
+#X msg 714 68 \; pd dsp \$1 \;;
+#X obj 714 47 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 34 57 cnv 15 150 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 49 57 Open Sound File;
+#X obj 41 330 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X obj 46 382 tgl 15 0 empty empty playback_on/off 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 46 427 metro;
+#X obj 46 469 pack f f f;
+#X obj 253 364 hsl 128 15 0 231492 0 0 empty sample Beginning_point
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 261 396 hsl 128 15 0 231492 0 0 empty sample End_point -2 -8
+0 10 -262144 -1 -1 0 1;
+#X floatatom 250 494 7 0 0 0 - - -;
+#X msg 37 255 \; sample range 0 \$1 \;;
+#X msg 37 135 read -resize \$1 soundfile;
+#X obj 250 449 expr ($f2 - $f1) / 44.1;
+#X obj 258 421 t b f;
+#X text 297 494 duration of specified part;
+#X msg 46 522 \$1 0 \, \$2 \$3;
+#X obj 46 558 vline~;
+#X obj 46 584 tabread4~ soundfile;
+#X obj 73 402 r \$0-pb-speed;
+#X obj 250 602 s \$0-pb-speed;
+#X obj 264 526 hsl 128 15 0.01 2 0 0 empty empty playback_speed -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 250 573 *;
+#X obj 261 549 t b f;
+#X obj 248 330 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 48 331 Using [vline~] for playback;
+#X obj 46 684 *~;
+#N canvas 572 203 441 363 volume 0;
+#X obj 100 102 vsl 20 50 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 111 213 vline~;
+#X msg 111 187 \$1 20;
+#X obj 111 237 outlet~;
+#X obj 110 25 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X coords 0 -1 1 1 20 55 2 100 100;
+#X restore 75 620 pd volume;
+#X obj 46 1034 biquad~;
+#X obj 248 841 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 258 331 Control over sample playback;
+#X text 258 842 Settings for [biquad~] filter;
+#X obj 262 895 hsl 128 15 30 8000 0 0 empty empty Frequency -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 290 929 hsl 128 15 -20 70 0 0 empty empty Gain -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 346 962 hsl 128 15 0 100 0 0 empty empty Bandwidth -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 259 1017 equalizer 5000 70 8;
+#X obj 343 985 t b f;
+#X obj 287 985 t b f;
+#X obj 46 1087 dac~;
+#X obj 553 330 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 572 330 Audio in;
+#X obj 596 363 adc~;
+#X obj 596 391 *~;
+#X obj 632 363 hsl 60 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 596 489 tabwrite~ soundfile;
+#X msg 613 441 bang;
+#X msg 629 465 stop;
+#X text 646 440 start recording;
+#X text 661 464 stop recording;
+#X obj 609 413 s~ \$0-rec2;
+#X obj 553 625 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 572 625 Recording;
+#X msg 518 742 start;
+#X msg 558 742 stop;
+#X msg 605 676 open record16.wav;
+#X obj 605 816 writesf~ 2;
+#X obj 642 765 r~ \$0-rec1;
+#X obj 662 786 r~ \$0-rec2;
+#X msg 612 703 open -bytes 3 record24.wav;
+#X msg 619 730 open -bytes 4 record32.wav;
+#X text 519 701 start/stop;
+#X text 522 717 recording;
+#X text 605 836 writes recieved audio to a soundfile;
+#X obj 248 625 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 258 626 Delay Effect;
+#X obj 46 763 +~;
+#X obj 266 781 delwrite~ \$0-sammap;
+#X obj 266 724 delread~ \$0-sammap 1600;
+#X obj 266 748 *~ 0.9;
+#X floatatom 266 702 7 0 0 0 - - -;
+#X obj 269 685 hsl 128 15 0 0.99 0 0 empty empty Delay_in_ms -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 78 1061 s~ \$0-rec1;
+#X text 680 413 Sends audio to recorder;
+#X text 148 1066 Sends audio to recorder;
+#X obj 250 471 abs;
+#X connect 1 0 21 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 20 0;
+#X connect 6 0 7 0;
+#X connect 10 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 25 0;
+#X connect 17 0 22 0;
+#X connect 17 0 16 0;
+#X connect 18 0 23 0;
+#X connect 18 0 16 1;
+#X connect 19 0 31 0;
+#X connect 21 0 4 0;
+#X connect 22 0 83 0;
+#X connect 23 0 22 0;
+#X connect 23 1 22 1;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 35 0;
+#X connect 28 0 15 1;
+#X connect 28 0 16 2;
+#X connect 30 0 32 0;
+#X connect 31 0 29 0;
+#X connect 32 0 31 0;
+#X connect 32 1 31 1;
+#X connect 35 0 74 0;
+#X connect 36 0 35 1;
+#X connect 37 0 47 0;
+#X connect 37 0 47 1;
+#X connect 37 0 80 0;
+#X connect 41 0 44 0;
+#X connect 42 0 46 0;
+#X connect 43 0 45 0;
+#X connect 44 0 37 0;
+#X connect 45 0 44 0;
+#X connect 45 1 44 2;
+#X connect 46 0 44 0;
+#X connect 46 1 44 1;
+#X connect 50 0 51 0;
+#X connect 51 0 53 0;
+#X connect 51 0 58 0;
+#X connect 52 0 51 1;
+#X connect 54 0 53 0;
+#X connect 55 0 53 0;
+#X connect 61 0 64 0;
+#X connect 62 0 64 0;
+#X connect 63 0 64 0;
+#X connect 65 0 64 0;
+#X connect 65 0 64 1;
+#X connect 66 0 64 0;
+#X connect 66 0 64 1;
+#X connect 67 0 64 0;
+#X connect 68 0 64 0;
+#X connect 74 0 37 0;
+#X connect 74 0 75 0;
+#X connect 76 0 77 0;
+#X connect 77 0 74 1;
+#X connect 78 0 76 0;
+#X connect 79 0 78 0;
+#X connect 83 0 19 0;

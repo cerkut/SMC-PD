@@ -1,0 +1,67 @@
+#N canvas 102 22 620 475 10;
+#X obj 44 14 cnv 15 500 30 empty empty Subpatches_and_Abstractions
+20 12 0 14 -33173 -262144 0;
+#N canvas 667 226 785 335 subpatch 0;
+#X obj 47 70 inlet;
+#X obj 49 213 outlet;
+#X text 84 70 <- [inlet] allows for data;
+#X text 96 86 to be passed into the subpatch;
+#X text 93 213 <- [outlet] allows for data;
+#X text 112 229 to leave the subpatch;
+#X obj 35 26 cnv 15 600 20 empty empty empty 20 12 0 14 -33173 -262144
+0;
+#X obj 35 174 cnv 15 600 20 empty empty empty 20 12 0 14 -33173 -262144
+0;
+#X text 306 177 [outlets];
+#X text 306 29 [inlets];
+#X obj 363 66 inlet~;
+#X text 403 65 <- [inlet~] same as [inlet];
+#X text 423 81 but for audio;
+#X obj 364 213 outlet~;
+#X text 431 228 but for audio;
+#X text 411 212 <- [outlet~] same as [outlet];
+#X text 302 302 NOTE!!! - inlets an outlets are used in left to right
+order when viewed in main patch;
+#X restore 51 150 pd subpatch;
+#X obj 49 89 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 71 90 Subpatches;
+#X text 127 149 <- This is a subpatch;
+#X text 145 165 click it to open;
+#X obj 318 89 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 342 91 Abstraction;
+#X obj 327 149 ex_abs;
+#X text 393 164 click it to open;
+#X text 375 148 <- This is an abstraction;
+#X obj 321 242 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 334 242 Graph on parent;
+#X obj 49 242 cnv 15 190 20 empty empty empty 20 12 0 14 -2867 -262144
+0;
+#X text 66 244 Dollar Signs Arguments;
+#X obj 52 377 dollarsign test 1 10;
+#X text 49 340 Abstraction with no arguments;
+#X text 49 351 look inside to see no values used;
+#X text 52 392 Abstraction with arguments;
+#X text 51 404 look inside to see values updated;
+#X text 52 416 to those specified by the;
+#X text 52 429 arguments of the abstraction;
+#N canvas 273 75 829 527 graph_on_parent 0;
+#X obj 118 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 118 138 5 0 0 0 - - -;
+#X obj 198 128 random 5;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
+#X restore 329 344 pd graph_on_parent;
+#X text 308 267 1) Right click on empty space;
+#X text 308 280 2) select properties and click graph on parent;
+#X text 341 426 Works on subpatches and abstractions!;
+#X obj 454 341 ex_abs_graphonparent;
+#X text 52 273 \$1 \, \$2 \, \$3 etc are used as;
+#X text 57 289 arguments in abstractions;
+#X text 308 293 3) any GUI element in the redbox appears;
+#X text 325 306 on the object box.;
+#X obj 52 322 dollarsign;

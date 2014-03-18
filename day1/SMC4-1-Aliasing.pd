@@ -1,0 +1,40 @@
+#N canvas 228 279 712 354 10;
+#X obj 39 109 mtof;
+#X obj 39 138 phasor~;
+#X obj 42 82 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 39 167 expr~ ($v1 > 0.5) * 2 - 1;
+#X obj 44 282 dac~;
+#X obj 144 278 tabwrite~ aliasing;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array aliasing 100 float 5;
+#A 0 -1 -1 1 -1 -1 1 1 -1 -1 1 -1 -1 1 1 -1 -1 1 -1 -1 1 1 -1 -1 1
+-1 -1 1 1 -1 -1 1 -1 -1 1 1 -1 -1 1 -1 -1 1 1 -1 -1 1 -1 -1 1 1 -1
+-1 1 1 -1 1 1 -1 -1 1 1 -1 1 1 -1 -1 1 1 -1 1 1 -1 -1 1 1 -1 1 1 -1
+-1 1 1 -1 1 1 -1 -1 1 1 -1 1 1 -1 -1 1 1 -1 1 1 -1 -1;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 285 121 graph;
+#X obj 144 218 metro 100;
+#X obj 144 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 285 271 cnv 15 400 25 empty empty AAU_CPH_Credits: 20 12 1 14
+-33173 -262144 0;
+#X obj 38 -13 cnv 15 650 40 empty empty DEMO_ALIASING_WITH_DIRECT_GENERATION_OF_SQUARE_WAVE
+20 12 0 14 -33173 -262144 0;
+#X text 181 81 Change the frequency to hear & see the effects of aliasing
+;
+#X text 163 196 Click to see;
+#X msg 464 32 \; pd dsp 1 \;;
+#X msg 534 32 \; pd dsp 0 \;;
+#X text 461 66 digital signal processing on/off;
+#X obj 98 140 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 12543.9 256;
+#X connect 0 0 1 0;
+#X connect 0 0 16 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;

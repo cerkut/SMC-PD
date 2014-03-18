@@ -1,0 +1,65 @@
+#N canvas 713 168 673 468 10;
+#X msg 444 62 \; pd dsp 1 \;;
+#X msg 514 62 \; pd dsp 0 \;;
+#X obj 48 361 dac~;
+#X obj 52 116 hsl 128 15 20 20000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 49 153 8 0 0 0 - - -;
+#X obj 257 306 dac~;
+#X obj 260 123 hsl 128 15 20 20000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 257 160 8 0 0 0 - - -;
+#X obj 446 262 dac~;
+#X obj 447 153 noise~;
+#X obj 49 184 osc~ 440;
+#X obj 257 190 phasor~;
+#X text 103 184 oscillator audio;
+#X text 101 195 object;
+#X text 52 101 frequencies in Hz;
+#X text 85 315 signal multiplier;
+#X text 137 225 volume level;
+#X obj 77 244 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 305 192 phasor object;
+#X text 301 256 signal multiplier;
+#X text 293 220 volume level;
+#X obj 294 235 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 441 96 digital signal processing on/off;
+#X text 490 218 signal multiplier;
+#X text 482 182 volume level;
+#X obj 483 197 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 256 107 frequencies in Hz;
+#X text 493 150 noise object;
+#X text 288 305 digital to analog converter;
+#X text 292 316 audio output;
+#X text 479 262 digital to analog converter;
+#X text 483 273 audio output;
+#X text 85 370 audio output;
+#X obj 49 317 *~;
+#X obj 258 257 *~;
+#X obj 447 218 *~;
+#X obj 73 287 vline~;
+#X msg 73 265 \$1 50;
+#X text 116 287 smoothing;
+#X obj 11 7 cnv 15 650 40 empty empty SOUND_PROCESSING_with_OSC~_PHASOR~_and_NOISE~
+20 12 0 14 -33173 -262144 0;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 9 0 35 0;
+#X connect 10 0 33 0;
+#X connect 11 0 34 0;
+#X connect 17 0 37 0;
+#X connect 21 0 34 1;
+#X connect 25 0 35 1;
+#X connect 33 0 2 1;
+#X connect 33 0 2 0;
+#X connect 34 0 5 1;
+#X connect 34 0 5 0;
+#X connect 35 0 8 1;
+#X connect 35 0 8 0;
+#X connect 36 0 33 1;
+#X connect 37 0 36 0;

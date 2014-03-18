@@ -1,0 +1,57 @@
+#N canvas 486 74 895 670 10;
+#X declare -path .;
+#X declare -path day1;
+#X declare -path day2;
+#X declare -lib flatgui/knob;
+#X declare -lib pddp;
+#X declare -path filterview;
+#X declare -path SMC10;
+#X declare -lib zexy;
+#X obj 28 555 cnv 15 400 25 empty empty AAU_CPH_Credits: 20 12 1 14
+-33173 -262144 0;
+#X obj 28 15 cnv 15 200 40 empty empty Session_1:_PD_Basics 20 12 1
+14 -33173 -262144 0;
+#X obj 757 18 declare -path .;
+#X obj 757 37 declare -path day1;
+#X obj 757 56 declare -path day2;
+#X text 27 583 SOPI Research Group \, Aalto University \, Finland;
+#X obj 268 15 cnv 15 200 40 empty empty Click-it 20 12 1 14 -33173
+-262144 0;
+#X obj 268 179 cnv 15 200 40 empty empty Mousalizer 20 12 1 14 -33173
+-262144 0;
+#X obj 268 227 Mousalizer;
+#X obj 28 239 cnv 15 200 40 empty empty Session_2:_More_PD 20 12 1
+14 -33173 -262144 0;
+#X obj 29 398 2.5_sample1;
+#X obj 29 425 2.6_sample2;
+#X obj 29 455 2.7_fiddle_bonk;
+#X obj 29 482 2.8_fiddle2;
+#X obj 28 293 2.1_controlobjects;
+#X obj 29 318 2.2_sendreceive;
+#X obj 29 344 2.3_subpatches_and_abstractions;
+#X obj 29 371 2.4_delay;
+#X obj 29 63 1.1_objects;
+#X obj 29 90 1.2_creating_sound;
+#X obj 30 118 1.3_additive;
+#X obj 30 145 1.4.1_am_synth;
+#X obj 30 172 1.4.2_fm_synth;
+#X obj 30 199 1.5_subtractive;
+#X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
+-262144 0;
+#X obj 29 506 Machineomatic;
+#X obj 27 596 pddplink http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+;
+#X text 26 609 fourMS \, University of Oslo \, Norway;
+#X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
+-262144 0;
+#X text 26 622 filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
+;
+#X obj 561 59 declare -path filterview;
+#X obj 510 88 filterview-help;
+#X obj 508 342 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
+0;
+#X obj 757 77 declare -path SMC10;
+#X obj 509 388 01-MyPluck;
+#X obj 509 413 03-SNAC;
+#X obj 114 635 pddplink http://www.katjaas.nl;
+#X text 27 634 SNAC (SMC10):;

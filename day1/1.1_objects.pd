@@ -1,0 +1,148 @@
+#N canvas 5 22 1230 779 10;
+#X obj 38 62 print;
+#X floatatom 43 136 5 0 0 2 this_is_a_number_box - -;
+#X msg 38 8 10;
+#X text 72 9 message box;
+#X text 44 34 connection;
+#X text 2 0 inlet;
+#X text -3 17 outlet;
+#X symbolatom 44 317 10 0 0 0 - - -;
+#X obj 44 290 symbol;
+#X msg 44 266 hello;
+#X obj 825 462 bng 50 250 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1;
+#X obj 825 529 delay 3000;
+#X obj 825 563 bng 50 250 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1;
+#X text 901 532 delay object;
+#X obj 48 626 print;
+#X text 70 602 toggle object;
+#X obj 43 186 nbx 5 14 -1e+37 1e+37 0 1 empty empty this-is-a-number2-box
+0 -6 0 10 -261597 -1 -1 20 256;
+#X obj 492 26 hsl 100 50 0 10000 0 0 empty empty mlab_slider -2 -6
+0 8 -262144 -1 -1 0 1;
+#X floatatom 489 148 8 0 0 0 - - -;
+#X obj 420 326 vradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 420 250 hradio 40 1 0 5 empty empty empty 0 -6 0 8 -258384 -1
+-1 0;
+#X floatatom 420 297 5 0 0 0 - - -;
+#X text 444 350 V radio box;
+#X text 537 297 H radio box;
+#X floatatom 420 377 5 0 0 0 - - -;
+#X obj 858 40 vu 15 120 empty empty -1 10 0 8 -66577 -1 1 0;
+#X floatatom 823 16 5 0 0 0 - - -;
+#X obj 826 310 tgl 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X floatatom 905 317 5 0 0 0 - - -;
+#X msg 919 338 300;
+#X msg 929 503 800;
+#X msg 891 503 3000;
+#X text 866 373 metro object;
+#X obj 826 371 metro;
+#X text 923 178 dB;
+#X text 891 209 dB;
+#X text 943 178 peak-level;
+#X text 911 208 rms-level;
+#X floatatom 885 178 5 0 0 0 - - -;
+#X floatatom 858 207 5 0 0 0 - - -;
+#X floatatom 876 16 5 0 0 0 - - -;
+#X text 820 271 The metro object is like a metronome. It sends a series
+of bangs at a constant rate.;
+#X symbolatom 90 419 10 0 0 0 - - -;
+#X floatatom 46 419 5 0 0 0 - - -;
+#X floatatom 46 376 5 0 0 2 - - -;
+#X text 112 316 symbol box can display the symbol.;
+#X text 101 288 symbol object box. used to store a symbol;
+#X text 42 356 Note! The number and symbol boxes look almost identical.
+;
+#X obj 826 394 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 48 604 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 34 -21 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144 0;
+#X text 53 -19 MESSAGES & OBJECTS;
+#X obj 37 96 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 50 98 NUMBER BOXES;
+#X obj 42 235 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 55 237 SYMBOL OBJECTS & SYMBOL BOXES;
+#X text 40 212 Number2 box has more options.;
+#X obj 42 457 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 55 459 BANG & TOGGLE;
+#X obj 46 514 print;
+#X obj 46 492 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 67 491 bang gui object;
+#X obj 47 576 print;
+#X text 81 541 bang object. uses less cpu.;
+#X obj 47 546 bang;
+#X text 80 555 can't be clicked like the gui object.;
+#X obj 420 -23 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 439 -21 SLIDERS;
+#X obj 424 14 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 424 150 5 0 0 0 - - -;
+#X obj 418 219 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 437 221 RADIO BOXES;
+#X text 416 397 Range and appearance can be changed \; from the properties
+;
+#X obj 416 443 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 435 445 CANVAS;
+#X obj 419 474 cnv 15 200 120 empty empty i-am-a-canvas_label 20 12
+0 14 -159808 -262144 0;
+#X obj 431 502 tgl 50 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 431 570 print;
+#X floatatom 495 537 5 0 0 0 - - -;
+#X msg 532 536 hello canvas;
+#X text 492 506 Comment over canvas;
+#X text 416 595 You need to be careful in what order you create the
+canvas. Things go very easily behind it \; like this........;
+#X obj 461 624 cnv 15 280 60 empty empty haha-i'm-in-your-patch-covering-your_text
+20 12 0 9 -257985 -66577 0;
+#X text 476 644 cut & paste helps;
+#X obj 821 238 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 840 240 METRO OBJECT;
+#X obj 821 429 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 840 431 DELAY OBJECT;
+#X obj 817 -23 cnv 15 200 20 empty empty empty 20 12 0 14 -191407 -262144
+0;
+#X text 836 -21 VU OBJECT;
+#X text 952 320 Right inlet sets the rate in ms.;
+#X text 951 339 1000 ms = 1 s;
+#X text 418 172 Range and appearance can be changed \; from the properties.
+;
+#X text 82 61 object box;
+#X connect 2 0 0 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 17 0 18 0;
+#X connect 19 0 24 0;
+#X connect 20 0 21 0;
+#X connect 25 0 39 0;
+#X connect 25 1 38 0;
+#X connect 26 0 25 0;
+#X connect 27 0 33 0;
+#X connect 28 0 33 1;
+#X connect 29 0 33 1;
+#X connect 30 0 11 1;
+#X connect 31 0 11 1;
+#X connect 33 0 48 0;
+#X connect 40 0 25 1;
+#X connect 44 0 43 0;
+#X connect 44 0 42 0;
+#X connect 49 0 14 0;
+#X connect 60 0 59 0;
+#X connect 64 0 62 0;
+#X connect 68 0 69 0;
+#X connect 76 0 77 0;
+#X connect 78 0 77 0;
+#X connect 79 0 77 0;

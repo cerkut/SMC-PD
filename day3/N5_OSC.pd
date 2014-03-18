@@ -1,0 +1,57 @@
+#N canvas 184 117 650 521 10;
+#X obj 350 114 cnv 15 270 220 empty empty empty 20 12 0 14 -196506
+-66577 0;
+#X obj 12 113 cnv 15 330 220 empty empty empty 20 12 0 14 -196506 -66577
+0;
+#X floatatom 75 301 5 0 0 0 - - -;
+#X msg 162 249 disconnect;
+#X floatatom 119 300 5 0 0 0 - - -;
+#X floatatom 18 127 5 0 0 0 - - -;
+#X floatatom 118 126 5 0 0 0 - - -;
+#X floatatom 368 278 5 0 0 0 - - -;
+#X floatatom 241 126 5 0 0 0 - - -;
+#X msg 241 142 send /asdf \$1;
+#X obj 538 265 print other;
+#X floatatom 447 278 5 0 0 0 - - -;
+#X text 10 42 OSC is a protocol for sharing data across networks and
+applications. OSC stands for Open Sound Control. It was originally
+designed to replace MIDI \, but it has caught on instead for inter-application
+communication.;
+#X text 10 348 On the most basic level \, it works very similarly to
+[netsend] and [netreceive].;
+#X floatatom 511 207 5 0 0 0 - - -;
+#X text 10 15 OSC_open_sound_control;
+#X obj 76 276 oscx/sendOSC;
+#X obj 366 137 oscx/dumpOSC 30200;
+#X obj 511 183 oscx/OSCroute /*;
+#X msg 162 228 connect localhost 30200;
+#X msg 17 142 send /bio \$1;
+#X obj 364 295 print bio;
+#X obj 440 295 print enterface;
+#X msg 118 142 send /interface \$1;
+#X obj 365 242 oscx/OSCroute /bio /interface;
+#X obj 242 404 cnv 15 400 100 empty empty empty 20 12 0 14 -175625
+-66577 0;
+#X text 279 448 Media Lab \, Department of Media;
+#X text 278 434 Sound and Music Computing - AAU-CPH Credits: SOPI Research
+Group;
+#X text 280 463 Aalto University School of Arts \, Design and Architecture
+;
+#X connect 3 0 16 0;
+#X connect 5 0 20 0;
+#X connect 6 0 23 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 0;
+#X connect 16 0 2 0;
+#X connect 16 1 4 0;
+#X connect 17 0 18 0;
+#X connect 17 0 24 0;
+#X connect 18 0 14 0;
+#X connect 19 0 16 0;
+#X connect 20 0 16 0;
+#X connect 23 0 16 0;
+#X connect 24 0 7 0;
+#X connect 24 0 21 0;
+#X connect 24 1 11 0;
+#X connect 24 1 22 0;
+#X connect 24 2 10 0;
