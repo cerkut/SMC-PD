@@ -1,0 +1,28 @@
+#N canvas 0 22 450 300 10;
+#X text 47 58 Simulate a one-step delay in "message time";
+#X text 45 83 2011-09-13 Dan Ellis dpwe@ee.columbia.edu for E4810 demo
+;
+#X obj 88 135 inlet;
+#X obj 72 236 outlet;
+#X obj 72 209 f;
+#X text 49 37 Z-1.pd;
+#X obj 27 180 r n;
+#X obj 30 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 10 135 r prestep;
+#X obj 72 171 f;
+#X text 113 166 We store the last value we see before prestep...;
+#X obj 29 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 114 210 Then we release it when we get the new n value;
+#X obj 168 113 r reset;
+#X msg 166 135 0;
+#X connect 2 0 9 1;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 11 0;
+#X connect 9 0 4 1;
+#X connect 11 0 9 0;
+#X connect 13 0 14 0;
+#X connect 14 0 9 0;

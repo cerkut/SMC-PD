@@ -1,0 +1,73 @@
+#N canvas 557 143 480 381 10;
+#X obj 14 273 output~;
+#X obj 280 301 loadsoundfile voice;
+#X obj 280 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array voice 194810 float 2;
+#X coords 0 1 194810 -1 200 140 1;
+#X restore 215 183 graph;
+#X obj 25 232 +~;
+#X obj 47 205 *~;
+#X obj 73 184 hsl 101 10 -1 1 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 9500 1;
+#X msg 70 164 0;
+#X text 111 164 gain;
+#X floatatom 78 198 5 0 0 0 - - -;
+#X obj 174 55 hsl 101 10 1 1000 1 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 97 1;
+#X floatatom 183 74 5 0 0 0 - - -;
+#X text 26 -11 Simple delay;
+#X obj 171 94 * 44.1;
+#X obj 47 121 delay~ 44100;
+#X text 7 329 2010-03-01 Dan Ellis dpwe@ee.columbia.edu;
+#X text 172 37 Delay / ms;
+#X text 54 139 delay~ takes #samples to delay;
+#X obj 293 72 / 100;
+#X floatatom 293 51 5 0 0 0 - - -;
+#X obj 293 92 osc~;
+#X obj 325 134 metro 10;
+#X obj 293 155 snapshot~;
+#X obj 307 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 293 114 expr~ $f2*($v1+1.5);
+#X obj 330 98 hsl 101 10 0 100 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 200 1;
+#X text 330 81 Modulation depth / ms;
+#X text 328 50 Modulation rate / cHz;
+#X text 289 17 THE WRONG WAY TO HAVE;
+#X text 290 30 TIME-VARYING DELAY (see vd~);
+#X obj 25 29 playloop voice;
+#X obj 25 5 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 107 3 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 55 51 noise~;
+#X obj 55 69 *~ 0.1;
+#X obj 25 89 audiosel~;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 4 1;
+#X connect 6 0 5 1;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 13 0 14 1;
+#X connect 14 0 5 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 22 0 10 0;
+#X connect 23 0 21 0;
+#X connect 24 0 22 0;
+#X connect 25 0 24 1;
+#X connect 30 0 35 0;
+#X connect 31 0 30 0;
+#X connect 32 0 30 1;
+#X connect 33 0 34 0;
+#X connect 34 0 35 1;
+#X connect 35 0 14 0;
+#X connect 35 0 4 0;

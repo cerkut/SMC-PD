@@ -1,0 +1,28 @@
+#N canvas 735 33 450 300 10;
+#X obj 36 204 soundfiler;
+#X obj 36 250 outlet;
+#X obj 36 126 openpanel;
+#X obj 36 80 inlet;
+#X obj 36 228 / 44.1;
+#X msg 36 180 read -resize \$1 \$2;
+#X obj 36 103 t b b;
+#X obj 101 126 symbol \$1;
+#X obj 36 152 pack s s;
+#X text 4 4 loadsoundfile;
+#X text 86 249 Return value is sound duration in ms;
+#X text 79 80 Inlet is a bang to launch file selection panel;
+#X text 103 152 Stick array name (\$1) onto file name;
+#X text 164 180 Build message;
+#X text 4 22 Opens a file selection panel to get a soundfile \, then
+loads it into an array.;
+#X text 6 52 Creation arg: \$1 - name of array to write data into;
+#X text 7 279 2010-02-23 Dan Ellis dpwe@ee.columbia.edu;
+#X connect 0 0 4 0;
+#X connect 2 0 8 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 2 0;
+#X connect 6 1 7 0;
+#X connect 7 0 8 1;
+#X connect 8 0 5 0;

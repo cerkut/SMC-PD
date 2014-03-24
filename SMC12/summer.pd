@@ -1,0 +1,22 @@
+#N canvas 689 97 450 300 10;
+#X text 9 5 summer.pd;
+#X text 9 26 implement a message-level summing node that doesn't depend
+on order of eval;
+#X text 20 60 2011-09-13 Dan Ellis dpwe@ee.columbia.edu;
+#X obj 60 80 inlet;
+#X obj 62 244 outlet;
+#X obj 63 139 +;
+#X msg 21 146 0;
+#X floatatom 65 166 5 0 0 0 - - -;
+#X obj 80 199 f;
+#X obj 60 109 t b f;
+#X obj -6 111 r prestep;
+#X connect 3 0 9 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 7 0 8 1;
+#X connect 8 0 4 0;
+#X connect 9 0 8 0;
+#X connect 9 1 5 0;
+#X connect 10 0 6 0;

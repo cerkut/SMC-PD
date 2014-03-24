@@ -1,13 +1,15 @@
-#N canvas 256 -958 895 670 10;
+#N canvas 55 -1103 1060 674 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
 #X declare -lib flatgui/knob;
 #X declare -lib pddp;
 #X declare -path filterview;
-#X declare -path SMC10;
 #X declare -lib zexy;
-#X obj 28 555 cnv 15 400 25 empty empty AAU_CPH_Credits: 20 12 1 14
+#X declare -lib zexy;
+#X declare -path SMC10;
+#X declare -path SMC12;
+#X obj 28 555 cnv 15 1024 25 empty empty AAU_CPH_Credits: 20 12 1 14
 -33173 -262144 0;
 #X obj 28 15 cnv 15 200 40 empty empty Session_1:_PD_Basics 20 12 1
 14 -33173 -262144 0;
@@ -38,7 +40,7 @@
 #X obj 30 199 1.5_subtractive;
 #X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
 -262144 0;
-#X obj 29 506 Machineomatic;
+#X obj 509 441 Machineomatic;
 #X obj 27 596 pddplink http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
 ;
 #X text 26 609 fourMS \, University of Oslo \, Norway;
@@ -50,10 +52,25 @@
 #X obj 510 88 filterview-help;
 #X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
 0;
-#X obj 757 77 declare -path SMC10;
 #X obj 509 388 01-MyPluck;
 #X obj 509 413 03-SNAC;
 #X obj 114 635 pddplink http://www.katjaas.nl;
 #X text 27 634 SNAC (SMC10):;
 #X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
 0;
+#X obj 758 181 cnv 15 200 40 empty empty SMC12 20 12 1 14 -33173 -262144
+0;
+#X obj 757 77 declare -path SMC10;
+#X obj 757 100 declare -path SMC12;
+#X text 765 228 0 Visit to Session_1 PD Basics;
+#X obj 766 250 s03-allpass1;
+#X obj 766 273 s06-allpass2;
+#X obj 766 297 s07-wahwah;
+#X obj 766 330 s10-comb;
+#X obj 766 350 s11-iircomb;
+#X obj 766 370 s12-vardelay;
+#X obj 766 390 s15-gardnerverb;
+#X obj 766 410 s16-reverb;
+#X obj 908 251 vcf~;
+#X text 27 646 SMC12: Dan Ellis;
+#X obj 128 647 pddplink http://www.ee.columbia.edu/~dpwe/e4896/;

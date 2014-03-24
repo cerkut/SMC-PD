@@ -1,0 +1,11 @@
+#N canvas 26 32 450 300 10;
+#X obj 61 160 allpass 30 0.7;
+#X obj 61 130 nestedallpass 30 0.5 20 0.3;
+#X obj 49 194 output~;
+#X obj 61 76 playsound~;
+#X text 27 32 Gardner-style allpass reverb;
+#X text 38 263 2010-03-01 Dan Ellis dpwe@ee.columbia.edu;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;

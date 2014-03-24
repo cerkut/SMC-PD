@@ -25,7 +25,7 @@ block size \, and only run that portion that way. Here \, the pulses
 that excite the delay line are computed outside this window \, and
 the output level control as well.;
 #X obj 276 181 block~ 1;
-#X obj 111 262 biquad~ 0 0 0.96 0.04 0;
+#X obj 111 262 biquad~ 0 0 0.96 0.01 0;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 0 9 0;

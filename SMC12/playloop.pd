@@ -1,0 +1,26 @@
+#N canvas 416 342 415 285 10;
+#X text 13 6 playloop;
+#X text 12 29 Play a sound in a table once or continuously;
+#X obj 37 90 inlet;
+#X text 12 42 Creation args: \$1 - name of array containing sound;
+#X obj 185 114 inlet;
+#X obj 92 186 tabplay~ \$1;
+#X obj 113 157 select 1;
+#X obj 170 157 f;
+#X obj 92 211 outlet~;
+#X obj 94 157 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 13 71 Bang 1st inlet to play once;
+#X text 124 97 Toggle looping with 2nd inlet;
+#X text 168 185 End-of-sound bang optionally restarts;
+#X text 23 241 2010-02-23 Dan Ellis dpwe@ee.columbia.edu;
+#X obj 95 136 select 1;
+#X connect 2 0 5 0;
+#X connect 4 0 7 1;
+#X connect 4 0 14 0;
+#X connect 5 0 8 0;
+#X connect 5 1 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 9 0 5 0;
+#X connect 14 0 9 0;
