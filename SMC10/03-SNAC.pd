@@ -203,7 +203,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore -7 150 pd draw;
-#X obj -7 115 tgl 25 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj -7 115 tgl 25 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 284 140 577 612 SNAC 0;
 #N canvas 75 51 324 693 one-coefficient 0;
@@ -452,7 +452,7 @@
 #X connect 8 0 3 0;
 #X restore 15 27 pd frequency;
 #X obj 15 2 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -260097
--1 0;
+-1 1;
 #X floatatom 24 50 5 0 0 0 - - -;
 #N canvas 61 75 435 491 peaks 0;
 #X obj 76 51 r \$0-draw;
@@ -505,7 +505,7 @@ errors in the case of weak fundamentals.;
 -260097 -1 2000 1;
 #X floatatom 234 329 5 0 0 0 - - -;
 #X obj 152 -7 import zexy;
-#X obj 79 271 zexy/mux~;
+#X obj 79 271 multiplex~;
 #X connect 0 0 3 5;
 #X connect 2 0 3 1;
 #X connect 2 0 8 0;

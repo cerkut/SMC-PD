@@ -1,7 +1,5 @@
 #N canvas 557 143 541 430 10;
 #X obj 38 298 output~;
-#X obj 313 320 loadsoundfile voice;
-#X obj 49 103 playloop voice;
 #X obj 313 294 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 49 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -9,8 +7,8 @@
 #X obj 131 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array voice 153259 float 2;
-#X coords 0 1 153259 -1 200 140 1;
+#X array \$0-voice 153259 float 2;
+#X coords 0 1 153259 -1 200 140 1 0 0;
 #X restore 239 208 graph;
 #X obj 49 257 +~;
 #X floatatom 101 208 0 0 0 0 - - -;
@@ -22,18 +20,20 @@
 #X text 41 370 2010-03-01 Dan Ellis dpwe@ee.columbia.edu;
 #X obj 153 160 loadbang;
 #X msg 101 183 95;
-#X connect 2 0 7 0;
-#X connect 2 0 10 0;
-#X connect 3 0 1 0;
-#X connect 4 0 2 0;
-#X connect 5 0 2 1;
-#X connect 7 0 0 0;
-#X connect 7 0 0 1;
-#X connect 8 0 10 1;
-#X connect 9 0 10 2;
-#X connect 10 0 0 0;
-#X connect 10 1 0 1;
-#X connect 11 0 9 0;
-#X connect 15 0 11 0;
-#X connect 15 0 16 0;
-#X connect 16 0 8 0;
+#X obj 49 103 playloop \$0-voice;
+#X obj 313 320 loadsoundfile \$0-voice;
+#X connect 1 0 16 0;
+#X connect 2 0 15 0;
+#X connect 3 0 15 1;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 8 1;
+#X connect 7 0 8 2;
+#X connect 8 0 0 0;
+#X connect 8 1 0 1;
+#X connect 9 0 7 0;
+#X connect 13 0 9 0;
+#X connect 13 0 14 0;
+#X connect 14 0 6 0;
+#X connect 15 0 5 0;
+#X connect 15 0 8 0;

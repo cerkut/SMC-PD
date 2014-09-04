@@ -185,7 +185,6 @@
 #X text 678 9 EXPRESSIONS;
 #X obj 662 252 cnv 15 200 20 empty empty empty 20 12 0 14 -228856 -262144
 0;
-#X text 681 254 EXPRESSIONS;
 #X obj 661 419 cnv 15 200 20 empty empty empty 20 12 0 14 -228856 -262144
 0;
 #X text 680 421 COUNTER;
@@ -207,6 +206,8 @@
 -33173 -262144 0;
 #X text 654 738 SOPI Research Group \, Aalto University \, Finland
 ;
+#X text 681 254 ROUTING;
+#X text 407 426 (LOOPING);
 #X connect 0 0 4 0;
 #X connect 1 0 0 1;
 #X connect 2 0 0 1;
@@ -303,7 +304,7 @@
 #X connect 142 0 139 0;
 #X connect 144 0 140 1;
 #X connect 145 0 141 1;
-#X connect 169 0 174 0;
-#X connect 170 0 169 0;
-#X connect 173 0 169 1;
-#X connect 174 0 171 0;
+#X connect 168 0 173 0;
+#X connect 169 0 168 0;
+#X connect 172 0 168 1;
+#X connect 173 0 170 0;
