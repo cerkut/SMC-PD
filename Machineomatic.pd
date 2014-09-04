@@ -1,5 +1,6 @@
 #N canvas 699 383 493 326 10;
-#N canvas 0 0 971 914 machineomatic 0;
+#X declare -lib pddp;
+#N canvas 0 22 971 914 machineomatic 0;
 #X obj 100 161 cnv 15 200 100 empty empty motor 20 12 1 16 -233017
 -258699 0;
 #X obj 300 161 cnv 15 200 100 empty empty gears 20 12 1 16 -233017
@@ -17,37 +18,37 @@
 #X obj 449 231 tgl 22 0 \$0-throb-mute empty empty 0 -6 0 8 -262144
 -1 -1 1 1;
 #X obj 328 202 hsl 100 12 0 1 0 1 \$0-throb-rattle \$0-throb-rattle-r
-rattle 35 6 1 8 -262144 -1 -1 7200 1;
+rattle 35 6 1 8 -262144 -1 -1 2100 1;
 #X obj 328 190 hsl 100 12 0 1 0 1 \$0-throb-freq \$0-throb-freq-r speed
-35 6 1 8 -262144 -1 -1 9100 1;
+35 6 1 8 -262144 -1 -1 5200 1;
 #X obj 328 214 hsl 100 12 0 1 0 1 \$0-throb-harm1 \$0-throb-harm1-r
-harm1 35 6 1 8 -262144 -1 -1 6900 1;
+harm1 35 6 1 8 -262144 -1 -1 2300 1;
 #X obj 328 224 hsl 100 12 0 1 0 1 \$0-throb-harm2 \$0-throb-harm2-r
-harm2 35 6 1 8 -262144 -1 -1 8500 1;
+harm2 35 6 1 8 -262144 -1 -1 4500 1;
 #X obj 328 234 hsl 100 12 0 1 0 1 \$0-throb-body \$0-throb-body-r body
-35 6 1 8 -262144 -1 -1 9300 1;
+35 6 1 8 -262144 -1 -1 5700 1;
 #X obj 328 244 hsl 100 12 0 1 0 1 \$0-throb-vol \$0-throb-vol-r vol
 35 6 1 8 -262144 -1 -1 3300 1;
 #X obj 149 200 hsl 100 12 0 1 0 1 \$0-motor-brush \$0-motor-brush-r
-brush 35 6 1 8 -262144 -1 -1 7200 1;
+brush 35 6 1 8 -262144 -1 -1 2600 1;
 #X obj 149 188 hsl 100 12 0 1 0 1 \$0-motor-speed \$0-motor-speed-r
-speed 35 6 1 8 -262144 -1 -1 2800 1;
+speed 35 6 1 8 -262144 -1 -1 400 1;
 #X obj 149 212 hsl 100 12 0 1 0 1 \$0-motor-hard \$0-motor-hard-r hard
-35 6 1 8 -262144 -1 -1 8200 1;
+35 6 1 8 -262144 -1 -1 8400 1;
 #X obj 149 222 hsl 100 12 0 1 0 1 \$0-motor-res \$0-motor-res-r res
-35 6 1 8 -262144 -1 -1 9000 1;
+35 6 1 8 -262144 -1 -1 5700 1;
 #X obj 149 232 hsl 100 12 0.01 1 1 1 \$0-motor-harmonic \$0-motor-harmonic-r
-harmonic 35 6 1 8 -262144 -1 -1 6800 1;
+harmonic 35 6 1 8 -262144 -1 -1 9900 1;
 #X obj 149 244 hsl 100 12 0 1 0 1 \$0-motor-volume \$0-motor-volume-r
-volume 35 6 1 8 -262144 -1 -1 3000 1;
+volume 35 6 1 8 -262144 -1 -1 8500 1;
 #X obj 150 312 hsl 100 12 0 1 0 1 \$0-engine-capacity \$0-motor-capacity-r
 capacity 35 6 1 8 -262144 -1 -1 0 1;
 #X obj 150 300 hsl 100 12 0 1 0 1 \$0-engine-speed \$0-engine-speed-r
-speed 35 6 1 8 -262144 -1 -1 2000 1;
+speed 35 6 1 8 -262144 -1 -1 3200 1;
 #X obj 150 336 hsl 100 12 0 1 0 1 \$0-engine-volume \$0-engine-volume-r
-volume 35 6 1 8 -262144 -1 -1 9400 1;
+volume 35 6 1 8 -262144 -1 -1 7000 1;
 #X obj 150 324 hsl 100 12 0 1 0 1 \$0-engine-jitter \$0-engine-jitter-r
-jitter 35 6 1 8 -262144 -1 -1 0 1;
+jitter 35 6 1 8 -262144 -1 -1 7300 1;
 #X obj 455 328 tgl 22 0 \$0-fan-mute empty empty 0 -6 0 8 -262144 -1
 -1 1 1;
 #X obj 335 305 hsl 100 12 0 1 0 1 \$0-fan-size \$0-fan-size-r size
@@ -55,15 +56,15 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X obj 335 293 hsl 100 12 0 1 0 1 \$0-fan-speed \$0-fan-speed-r speed
 35 6 1 8 -262144 -1 -1 9600 1;
 #X obj 335 341 hsl 100 12 0 1 0 1 \$0-fan-volume \$0-fan-volume-r volume
-35 6 1 8 -262144 -1 -1 8500 1;
+35 6 1 8 -262144 -1 -1 3200 1;
 #X obj 335 317 hsl 100 12 0 1 0 1 \$0-fan-blade1 \$0-fan-blade1-r blade1
 35 6 1 8 -262144 -1 -1 7000 1;
 #X obj 335 329 hsl 100 12 0 1 0 1 \$0-fan-blade2 \$0-fan-blade2-r blade2
 35 6 1 8 -262144 -1 -1 6400 1;
 #X obj 123 132 hsl 128 15 0 1 0 1 \$0-speed \$0-speed-r masterspeed
-33 7 1 8 -262144 -1 -1 9300 1;
+33 7 1 8 -262144 -1 -1 6200 1;
 #X obj 123 147 hsl 128 15 0 1 0 1 \$0-inertia \$0-inertia-r inertia
-33 7 1 8 -262144 -1 -1 12700 1;
+33 7 1 8 -262144 -1 -1 7600 1;
 #N canvas 58 495 923 294 guts 0;
 #X obj 77 105 dac~;
 #X obj 93 79 *~ 0.4;
@@ -82,7 +83,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X obj 25 251 clip~ 0 0.8;
 #X obj 112 140 line~;
 #X obj 58 185 *~;
-#N canvas 0 0 450 300 graph4 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array bell-curve 200 float 1;
 #A 0 1.12535e-07 1.54727e-07 2.12059e-07 2.89706e-07 3.94519e-07 5.35535e-07
 7.24633e-07 9.77371e-07 1.31404e-06 1.76105e-06 2.35258e-06 3.13275e-06
@@ -281,7 +282,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X obj 202 307 * -1;
 #X obj 172 456 +~;
 #X obj 113 238 sig~ 0.2;
-#N canvas 0 0 906 686 metalnoise 0;
+#N canvas 0 22 906 686 metalnoise 0;
 #X obj 351 143 noise~;
 #X obj 351 164 hip~ 100;
 #X obj 403 333 outlet~;
@@ -409,7 +410,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X connect 43 0 33 0;
 #X restore 9 52 pd motor;
 #X obj 180 83 dac~;
-#N canvas 0 0 450 300 xfde 0;
+#N canvas 0 22 450 300 xfde 0;
 #X obj 115 54 inlet;
 #X obj 115 79 clip 0 1;
 #X obj 145 140 swap 1;
@@ -754,7 +755,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X connect 57 0 25 0;
 #X restore 276 49 pd fan;
 #X obj 277 73 dac~;
-#N canvas 0 0 698 523 motor 0;
+#N canvas 0 22 698 523 motor 0;
 #X obj 42 22 r \$0-motor-brush;
 #X obj 162 22 r \$0-motor-speed;
 #X obj 42 82 r \$0-motor-hard;
@@ -796,7 +797,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X connect 16 1 15 0;
 #X connect 16 2 15 1;
 #X restore 9 31 pd motor if;
-#N canvas 0 0 683 483 gears 0;
+#N canvas 0 22 683 483 gears 0;
 #X obj 66 43 r \$0-throb-rattle;
 #X obj 80 65 r \$0-throb-freq;
 #X obj 92 87 r \$0-throb-harm1;
@@ -823,7 +824,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X connect 8 0 6 0;
 #X connect 9 0 7 0;
 #X restore 93 30 pd gears if;
-#N canvas 0 0 783 549 engine 0;
+#N canvas 0 22 783 549 engine 0;
 #X obj 32 62 r \$0-engine-speed;
 #X obj 161 62 r \$0-engine-capacity;
 #X obj 33 88 t b f;
@@ -965,7 +966,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X restore 18 37 pd catcher;
 #X obj 18 -2 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#N canvas 0 0 859 748 sender 0;
+#N canvas 0 22 859 748 sender 0;
 #X obj 54 287 s \$0-motor-speed-r;
 #X obj 62 309 s \$0-motor-brush-r;
 #X obj 65 331 s \$0-motor-hard-r;
@@ -1019,7 +1020,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X connect 24 22 21 0;
 #X connect 25 0 24 0;
 #X restore 461 60 pd sender;
-#N canvas 0 0 592 900 presets 0;
+#N canvas 0 22 592 900 presets 0;
 #X msg 91 105 blades 0.828283 0.979798 0.848485 0.575758 46 0.0808081
 0.515152 0.292929 0.383838 0.919192 0.353535 0.363636 0 0.383838 0.528889
 0.616162 0.323232 0.262626 0.626263 0.414141 0.59596 0.969697;
@@ -1096,7 +1097,7 @@ jitter 35 6 1 8 -262144 -1 -1 0 1;
 #X restore 422 372 pd guts;
 #X symbolatom 324 137 20 0 0 0 - #0-patchname -;
 #X obj 274 137 nbx 5 14 0 7 0 0 \$0-patchselect empty patch 0 -6 1
-8 -262144 -1 -1 1 256;
+8 -262144 -1 -1 2 256;
 #X coords 0 -1 1 1 400 262 1 100 100;
 #X restore 8 33 pd machineomatic;
 #X obj 9 9 import pddp;
