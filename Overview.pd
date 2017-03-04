@@ -1,12 +1,8 @@
-#N canvas 661 1267 1060 674 10;
+#N canvas 352 91 1061 678 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
-#X declare -lib flatgui/knob;
-#X declare -lib pddp;
 #X declare -path filterview;
-#X declare -lib zexy;
-#X declare -lib zexy;
 #X declare -path SMC10;
 #X declare -path SMC12;
 #X obj 28 555 cnv 15 1024 25 empty empty AAU_CPH_Credits: 20 12 1 14
@@ -41,8 +37,6 @@
 #X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
 -262144 0;
 #X obj 509 441 Machineomatic;
-#X obj 27 596 pddplink http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
-;
 #X text 26 609 fourMS \, University of Oslo \, Norway;
 #X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
 -262144 0;
@@ -54,7 +48,6 @@
 0;
 #X obj 509 388 01-MyPluck;
 #X obj 509 413 03-SNAC;
-#X obj 114 635 pddplink http://www.katjaas.nl;
 #X text 27 634 SNAC (SMC10):;
 #X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
 0;
@@ -73,4 +66,12 @@
 #X obj 766 410 s16-reverb;
 #X obj 908 251 vcf~;
 #X text 27 646 SMC12: Dan Ellis;
-#X obj 128 647 pddplink http://www.ee.columbia.edu/~dpwe/e4896/;
+#X text 756 587 Needs: &&&&&&&&&&&&&&&&&&&&&&&&& + MouseState: cyclonev03-alpha1
++ pddp:;
+#X obj 27 596 pddp/pddplink http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+;
+#X obj 113 633 pddp/pddplink http://www.katjaas.nl;
+#X obj 343 443;
+#X text 362 478 http://www.aalto.fi;
+#X obj 130 647 pddp/pddplink http://www.ee.columbia.edu/~dpwe/e4896/
+;
