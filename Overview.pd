@@ -1,4 +1,4 @@
-#N canvas 352 91 1061 678 10;
+#N canvas 556 54 1124 712 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
@@ -36,19 +36,19 @@
 #X obj 30 199 1.5_subtractive;
 #X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
 -262144 0;
-#X obj 509 441 Machineomatic;
-#X text 26 609 fourMS \, University of Oslo \, Norway;
+#X obj 509 447 Machineomatic;
+#X text 26 602 fourMS \, University of Oslo \, Norway;
 #X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
 -262144 0;
-#X text 26 622 filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
+#X text 241 603 filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
 ;
 #X obj 561 59 declare -path filterview;
 #X obj 510 88 filterview-help;
 #X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
 0;
 #X obj 509 388 01-MyPluck;
-#X obj 509 413 03-SNAC;
-#X text 27 634 SNAC (SMC10):;
+#X obj 509 419 03-SNAC;
+#X text 26 621 SNAC (SMC10):;
 #X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
 0;
 #X obj 758 181 cnv 15 200 40 empty empty SMC12 20 12 1 14 -33173 -262144
@@ -66,12 +66,50 @@
 #X obj 766 410 s16-reverb;
 #X obj 908 251 vcf~;
 #X text 27 646 SMC12: Dan Ellis;
-#X text 756 587 Needs: &&&&&&&&&&&&&&&&&&&&&&&&& + MouseState: cyclonev03-alpha1
+#X text 251 621 http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+, f 68;
+#X text 115 620 http://www.katjaas.nl;
+#X text 136 645 http://www.ee.columbia.edu/~dpwe/e4896/;
+#X text 686 584 Needs: unauthorized + zexy + MouseState: cyclonev03-alpha1
 + pddp:;
-#X obj 27 596 pddp/pddplink http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+#N canvas 0 23 919 419 myFFT 0;
+#X obj 61 125 rfft~;
+#X obj 51 157 *~;
+#X obj 89 155 *~;
+#X obj 52 178 +~;
+#X obj 53 201 sqrt~;
+#X obj 63 45 inlet~;
+#X text 58 21 Audio;
+#X obj 21 43 inlet;
+#X text 24 21 metro;
+#X obj 145 45 block~ 1024;
+#X obj 23 225 tabwrite~ \$0-freqz_domain;
+#N canvas 0 23 450 278 (subpatch) 0;
+#X array \$0-freqz_domain 512 float 0;
+#X coords 0 45000 511 -1 512 140 1 0 0;
+#X restore 196 80 graph;
+#X text 356 55 The size of the array=block~/2=512 \, check from properties
 ;
-#X obj 113 633 pddp/pddplink http://www.katjaas.nl;
-#X obj 343 443;
-#X text 362 478 http://www.aalto.fi;
-#X obj 130 647 pddp/pddplink http://www.ee.columbia.edu/~dpwe/e4896/
-;
+#X text 191 223 0;
+#X text 692 226 511;
+#X text 430 222 256;
+#X text 730 226 BINS;
+#X text 190 239 0;
+#X text 417 238 11025;
+#X text 680 238 22050;
+#X text 729 238 Frequency (Hz);
+#X text 628 257 Frequency = FS/2*BIN = FS/BLOCK;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 0 1 2 0;
+#X connect 0 1 2 1;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 5 0 0 0;
+#X connect 7 0 10 0;
+#X restore 514 270 pd myFFT;
+#X text 511 226 Quick & dirty FFT implementation;
+#X text 583 240 Inlets: 1 Metronome;
+#X text 655 257 2 Audio;

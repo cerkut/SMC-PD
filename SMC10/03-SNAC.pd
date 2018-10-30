@@ -1,6 +1,4 @@
 #N canvas 375 144 822 569 10;
-#X declare -lib zexy;
-#X declare -lib zexy;
 #X obj 293 201 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
 -260097 -1;
 #X text 279 183 change phases;
@@ -454,28 +452,28 @@
 #X obj 15 2 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -260097
 -1 1;
 #X floatatom 24 50 5 0 0 0 - - -;
-#N canvas 61 75 435 491 peaks 0;
+#N canvas 61 75 435 491 peaks 1;
 #X obj 76 51 r \$0-draw;
 #X obj 78 94 delay 50;
 #X obj 133 142 tabplay~ \$0-snac;
-#X obj 145 180 delta~;
 #X obj 140 216 <~ 0;
-#X obj 139 251 delta~;
 #X obj 140 299 *~;
 #X obj 193 214 clip~ 0 1;
 #X obj 140 348 tabwrite~ \$0-peaks;
-#X obj 198 252 delay~ 2 2;
+#X obj 145 180 cyclone/delta~;
+#X obj 139 251 cyclone/delta~;
+#X obj 248 252 cyclone/delay~ 2 2;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 1 0 8 0;
-#X connect 2 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
 #X connect 2 0 7 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 6 0 8 0;
-#X connect 7 0 9 0;
-#X connect 9 0 6 1;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 9 0;
+#X connect 7 0 3 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 1;
 #X restore 226 381 pd peaks;
 #X obj 223 438 cnv 15 100 60 empty empty empty 20 12 0 14 -260097 -66577
 0;
