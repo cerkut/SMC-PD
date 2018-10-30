@@ -1,5 +1,5 @@
 #N canvas 112 146 551 350 10;
-#N canvas 436 85 468 358 delay-writer 0;
+#N canvas 78 368 468 381 delay-writer 1;
 #X obj 33 218 inlet~;
 #X obj 33 324 outlet~;
 #X obj 34 279 +~;
@@ -7,11 +7,9 @@
 #X text 27 5 Because of the feedback \, the delwrite~ has to be computed
 after the delread~. So we set the blocksize to 1 to minimize the resulting
 delay.;
-#X text 274 203 this object sets the;
+#X text 271 203 this object sets the;
 #X text 273 220 block size for audio;
 #X text 272 239 computations in this;
-#X obj 112 239 delread~ G04-del;
-#X obj 45 300 delwrite~ G04-del 1000;
 #X text 26 181 incoming;
 #X text 28 196 pulses;
 #X text 112 180 delay;
@@ -26,12 +24,14 @@ that excite the delay line are computed outside this window \, and
 the output level control as well.;
 #X obj 276 181 block~ 1;
 #X obj 111 262 biquad~ 0 0 0.96 0.01 0;
+#X obj 45 300 delwrite~ \$0-G04-del 1000;
+#X obj 112 239 delread~ \$0-G04-del;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X connect 2 0 9 0;
-#X connect 3 0 8 0;
-#X connect 8 0 18 0;
-#X connect 18 0 2 1;
+#X connect 2 0 17 0;
+#X connect 3 0 18 0;
+#X connect 16 0 2 1;
+#X connect 18 0 16 0;
 #X restore -75 217 pd delay-writer;
 #X obj 55 181 expr 1000/$f1;
 #X obj 55 155 mtof;
