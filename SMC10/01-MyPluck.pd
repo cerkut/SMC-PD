@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 #N canvas 328 420 551 373 10;
 #N canvas 770 147 468 381 delay-writer 0;
+=======
+#N canvas 112 146 551 350 10;
+#N canvas 78 368 468 381 delay-writer 1;
+>>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X obj 33 218 inlet~;
 #X obj 33 324 outlet~;
 #X obj 34 279 +~;

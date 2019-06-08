@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #N canvas 556 54 1124 712 10;
+=======
+#N canvas 392 83 1124 712 10;
+>>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
@@ -36,7 +40,11 @@
 #X obj 30 199 1.5_subtractive;
 #X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
 -262144 0;
+<<<<<<< HEAD
 #X obj 509 447 Machineomatic;
+=======
+#X obj 509 441 Machineomatic;
+>>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X text 26 602 fourMS \, University of Oslo \, Norway;
 #X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
 -262144 0;
@@ -47,7 +55,11 @@
 #X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
 0;
 #X obj 509 388 01-MyPluck;
+<<<<<<< HEAD
 #X obj 509 419 03-SNAC;
+=======
+#X obj 509 413 03-SNAC;
+>>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X text 26 621 SNAC (SMC10):;
 #X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
 0;
@@ -72,6 +84,7 @@
 #X text 136 645 http://www.ee.columbia.edu/~dpwe/e4896/;
 #X text 686 584 Needs: unauthorized + zexy + MouseState: cyclonev03-alpha1
 + pddp:;
+<<<<<<< HEAD
 #N canvas 0 23 919 419 myFFT 0;
 #X obj 61 125 rfft~;
 #X obj 51 157 *~;
@@ -113,3 +126,5 @@
 #X text 511 226 Quick & dirty FFT implementation;
 #X text 583 240 Inlets: 1 Metronome;
 #X text 655 257 2 Audio;
+=======
+>>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
