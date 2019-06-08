@@ -4,6 +4,8 @@
 
 PD starting toolbox for MED4 SMC
 
+[[./extras/Overview.png]]
+
 * Dependencies
 
 - unauthorized + zexy + MouseState: cyclonev03-alpha1

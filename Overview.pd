@@ -1,4 +1,4 @@
-#N canvas 548 23 1124 712 10;
+#N canvas 298 63 1124 712 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
