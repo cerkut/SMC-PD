@@ -1,0 +1,27 @@
+# Created 2019-06-08 Sat 11:48
+#+TITLE: SMC-PD REPO
+#+AUTHOR: Cumhur Erkut
+
+PD starting toolbox for MED4 SMC
+
+* Dependencies
+
+- unauthorized + zexy + MouseState: cyclonev03-alpha1
+- pddp
+
+* PROJECT
+
+** TODO Make the repo fully compatible with PD-VANILLA
+
+** TODO Adjust the contents rather then sessions
+
+Christensen, Mads Græsbøll. Introduction to Audio Processing, 2018.
+
+* Credits
+
+- Aalto SOPI Research Team, Finland
+- University of Oslo, fourMS Research Team, Norway
+- http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+- filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
+- http://www.katjaas.nl
+

@@ -1,14 +1,13 @@
-<<<<<<< HEAD
-#N canvas 556 54 1124 712 10;
-=======
-#N canvas 392 83 1124 712 10;
->>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
+#N canvas 548 23 1124 712 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
 #X declare -path filterview;
 #X declare -path SMC10;
 #X declare -path SMC12;
+#X declare -stdlib zexy;
+#X declare -stdlib ggee;
+#X declare -stdlib unauthorized;
 #X obj 28 555 cnv 15 1024 25 empty empty AAU_CPH_Credits: 20 12 1 14
 -33173 -262144 0;
 #X obj 28 15 cnv 15 200 40 empty empty Session_1:_PD_Basics 20 12 1
@@ -40,11 +39,7 @@
 #X obj 30 199 1.5_subtractive;
 #X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
 -262144 0;
-<<<<<<< HEAD
 #X obj 509 447 Machineomatic;
-=======
-#X obj 509 441 Machineomatic;
->>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X text 26 602 fourMS \, University of Oslo \, Norway;
 #X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
 -262144 0;
@@ -55,11 +50,7 @@
 #X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
 0;
 #X obj 509 388 01-MyPluck;
-<<<<<<< HEAD
-#X obj 509 419 03-SNAC;
-=======
 #X obj 509 413 03-SNAC;
->>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
 #X text 26 621 SNAC (SMC10):;
 #X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
 0;
@@ -82,9 +73,6 @@
 , f 68;
 #X text 115 620 http://www.katjaas.nl;
 #X text 136 645 http://www.ee.columbia.edu/~dpwe/e4896/;
-#X text 686 584 Needs: unauthorized + zexy + MouseState: cyclonev03-alpha1
-+ pddp:;
-<<<<<<< HEAD
 #N canvas 0 23 919 419 myFFT 0;
 #X obj 61 125 rfft~;
 #X obj 51 157 *~;
@@ -126,5 +114,21 @@
 #X text 511 226 Quick & dirty FFT implementation;
 #X text 583 240 Inlets: 1 Metronome;
 #X text 655 257 2 Audio;
-=======
->>>>>>> 84e322a03ddafefecab31144b4f76537b5583f6b
+#X obj 822 619 zexy;
+#X obj 688 619 declare -stdlib zexy;
+#X text 686 584 Needs: unauthorized + MouseState: cyclonev03-alpha1
++ pddp:;
+#X msg 758 122 \; pd dsp 1 \;;
+#X msg 828 122 \; pd dsp 0 \;;
+#X text 755 156 digital signal processing on/off;
+#X obj 687 641 declare -stdlib ggee;
+#X obj 688 664 declare -stdlib unauthorized;
+#X obj 872 664 unauthorized/spigot~;
+#X obj 765 484 output~;
+#X obj 765 439 receive~ master-L;
+#X obj 858 342 send~ master-L;
+#X obj 876 326 s~ master-R;
+#X obj 801 460 r~ master-R;
+#X text 105 63 GUI;
+#X connect 67 0 66 0;
+#X connect 70 0 66 1;
