@@ -1,4 +1,4 @@
-#N canvas 298 63 1124 712 10;
+#N canvas 0 23 1144 576 10;
 #X declare -path .;
 #X declare -path day1;
 #X declare -path day2;
@@ -8,72 +8,85 @@
 #X declare -stdlib zexy;
 #X declare -stdlib ggee;
 #X declare -stdlib unauthorized;
-#X obj 28 555 cnv 15 1024 25 empty empty AAU_CPH_Credits: 20 12 1 14
+#X obj 28 455 cnv 15 1100 25 empty empty AAU_CPH_Credits: 20 12 1 14
 -33173 -262144 0;
 #X obj 28 15 cnv 15 200 40 empty empty Session_1:_PD_Basics 20 12 1
 14 -33173 -262144 0;
-#X obj 757 18 declare -path .;
-#X obj 757 37 declare -path day1;
-#X obj 757 56 declare -path day2;
-#X text 27 583 SOPI Research Group \, Aalto University \, Finland;
-#X obj 268 15 cnv 15 200 40 empty empty Click-it 20 12 1 14 -33173
--262144 0;
-#X obj 268 179 cnv 15 200 40 empty empty Mousalizer 20 12 1 14 -33173
--262144 0;
-#X obj 268 227 Mousalizer;
-#X obj 28 239 cnv 15 200 40 empty empty Session_2:_More_PD 20 12 1
-14 -33173 -262144 0;
-#X obj 29 398 2.5_sample1;
-#X obj 29 425 2.6_sample2;
-#X obj 29 455 2.7_fiddle_bonk;
-#X obj 29 482 2.8_fiddle2;
-#X obj 28 293 2.1_controlobjects;
-#X obj 29 318 2.2_sendreceive;
-#X obj 29 344 2.3_subpatches_and_abstractions;
-#X obj 29 371 2.4_delay;
+#X obj 917 18 declare -path .;
+#X obj 917 37 declare -path day1;
+#X obj 917 56 declare -path day2;
+#X text 27 483 SOPI Research Group \, Aalto University \, Finland;
+#X obj 31 338 2.5_sample1;
+#X obj 31 365 2.6_sample2;
+#X obj 687 409 2.7_fiddle_bonk;
+#X obj 816 409 2.8_fiddle2;
+#X obj 30 224 2.1_controlobjects;
+#X obj 31 249 2.2_sendreceive;
+#X obj 31 275 2.3_subpatches_and_abstractions;
+#X obj 31 311 2.4_delay;
 #X obj 29 63 1.1_objects;
 #X obj 29 90 1.2_creating_sound;
 #X obj 30 118 1.3_additive;
 #X obj 30 145 1.4.1_am_synth;
 #X obj 30 172 1.4.2_fm_synth;
 #X obj 30 199 1.5_subtractive;
-#X obj 267 341 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
+#X obj 919 253 Machineomatic;
+#X text 26 502 fourMS \, University of Oslo \, Norway;
+#X obj 249 15 cnv 15 200 40 empty empty Ch04_Filters 20 12 1 14 -33173
 -262144 0;
-#X obj 509 447 Machineomatic;
-#X text 26 602 fourMS \, University of Oslo \, Norway;
-#X obj 509 15 cnv 15 200 40 empty empty SMC07_Filters 20 12 1 14 -33173
--262144 0;
-#X text 241 603 filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
+#X text 241 503 filterview (SMC07): Hans-Christoph Steiner <hans@eds.org>
 ;
-#X obj 561 59 declare -path filterview;
-#X obj 510 88 filterview-help;
-#X obj 508 342 cnv 15 200 40 empty empty SMC11 20 12 1 14 -33173 -262144
-0;
-#X obj 509 388 01-MyPluck;
-#X obj 509 413 03-SNAC;
-#X text 26 621 SNAC (SMC10):;
-#X obj 508 182 cnv 15 200 40 empty empty SMC10 20 12 1 14 -33173 -262144
-0;
-#X obj 758 181 cnv 15 200 40 empty empty SMC12 20 12 1 14 -33173 -262144
-0;
-#X obj 757 77 declare -path SMC10;
-#X obj 757 100 declare -path SMC12;
-#X text 765 228 0 Visit to Session_1 PD Basics;
-#X obj 766 250 s03-allpass1;
-#X obj 766 273 s06-allpass2;
-#X obj 766 297 s07-wahwah;
-#X obj 766 330 s10-comb;
-#X obj 766 350 s11-iircomb;
-#X obj 766 370 s12-vardelay;
-#X obj 766 390 s15-gardnerverb;
-#X obj 766 410 s16-reverb;
-#X obj 908 251 vcf~;
-#X text 27 646 SMC12: Dan Ellis;
-#X text 251 621 http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
+#X obj 301 59 declare -path filterview;
+#X obj 250 78 filterview-help;
+#X obj 248 342 cnv 15 200 40 empty empty Ch06_Other_Filters 20 12 1
+14 -33173 -262144 0;
+#X obj 249 228 01-MyPluck;
+#X obj 687 389 03-SNAC;
+#X text 26 521 SNAC (SMC10):;
+#X obj 248 182 cnv 15 200 40 empty empty Ch05_Comb_Filters 20 12 1
+14 -33173 -262144 0;
+#X obj 918 181 cnv 15 200 40 empty empty MiniProject_Ideas 20 12 1
+14 -33173 -262144 0;
+#X obj 917 77 declare -path SMC10;
+#X obj 917 100 declare -path SMC12;
+#X obj 469 231 s03-allpass1;
+#X obj 469 254 s06-allpass2;
+#X obj 604 232 s07-wahwah;
+#X obj 371 229 s10-comb;
+#X obj 371 249 s11-iircomb;
+#X obj 371 269 s12-vardelay;
+#X obj 468 387 s15-gardnerverb;
+#X obj 468 407 s16-reverb;
+#X obj 424 94 vcf~;
+#X text 27 539 SMC12: Dan Ellis;
+#X text 251 521 http://obiwannabe.co.uk/html/toys/machineomatic/machine-o-matic.html
 , f 68;
-#X text 115 620 http://www.katjaas.nl;
-#X text 136 645 http://www.ee.columbia.edu/~dpwe/e4896/;
-#N canvas 0 23 919 419 myFFT 0;
+#X text 115 520 http://www.katjaas.nl;
+#X text 135 538 http://www.ee.columbia.edu/~dpwe/e4896/;
+#X obj 822 507 zexy;
+#X obj 688 507 declare -stdlib zexy;
+#X text 686 484 Needs: unauthorized + MouseState: cyclonev03-alpha1
++ pddp:;
+#X msg 918 122 \; pd dsp 1 \;;
+#X msg 988 122 \; pd dsp 0 \;;
+#X text 915 156 digital signal processing on/off;
+#X obj 687 529 declare -stdlib ggee;
+#X obj 688 552 declare -stdlib unauthorized;
+#X obj 872 552 unauthorized/spigot~;
+#X obj 147 185 output~;
+#X obj 148 137 receive~ master-L;
+#X obj 147 114 send~ master-L;
+#X obj 148 95 s~ master-R;
+#X obj 183 157 r~ master-R;
+#X text 105 63 GUI;
+#X text 794 389 Autocorrelation;
+#X obj 469 15 cnv 15 200 40 empty empty Ch07_Fourier_transform 20 12
+1 14 -33173 -262144 0;
+#X obj 468 342 cnv 15 200 40 empty empty Ch09_SpatialFx 20 12 1 14
+-33173 -262144 0;
+#X obj 468 182 cnv 15 200 40 empty empty Ch08_AudioFx 20 12 1 14 -33173
+-262144 0;
+#N canvas 581 332 919 419 myFFT 0;
 #X obj 61 125 rfft~;
 #X obj 51 157 *~;
 #X obj 89 155 *~;
@@ -110,25 +123,32 @@
 #X connect 4 0 10 0;
 #X connect 5 0 0 0;
 #X connect 7 0 10 0;
-#X restore 514 270 pd myFFT;
-#X text 511 226 Quick & dirty FFT implementation;
-#X text 583 240 Inlets: 1 Metronome;
-#X text 655 257 2 Audio;
-#X obj 822 619 zexy;
-#X obj 688 619 declare -stdlib zexy;
-#X text 686 584 Needs: unauthorized + MouseState: cyclonev03-alpha1
-+ pddp:;
-#X msg 758 122 \; pd dsp 1 \;;
-#X msg 828 122 \; pd dsp 0 \;;
-#X text 755 156 digital signal processing on/off;
-#X obj 687 641 declare -stdlib ggee;
-#X obj 688 664 declare -stdlib unauthorized;
-#X obj 872 664 unauthorized/spigot~;
-#X obj 765 484 output~;
-#X obj 765 439 receive~ master-L;
-#X obj 858 342 send~ master-L;
-#X obj 876 326 s~ master-R;
-#X obj 801 460 r~ master-R;
-#X text 105 63 GUI;
-#X connect 67 0 66 0;
-#X connect 70 0 66 1;
+#X restore 471 73 pd myFFT;
+#X text 472 56 Quick & dirty FFT implementation;
+#X text 544 72 In: 1 Metro \, 2 Audio;
+#X obj 689 231 s03-allpass1;
+#X obj 689 254 s06-allpass2;
+#X obj 824 232 s07-wahwah;
+#X obj 689 15 cnv 15 200 40 empty empty Ch10_AudioEq 20 12 1 14 -33173
+-262144 0;
+#X obj 688 342 cnv 15 200 40 empty empty Ch12_PitchEstimation 20 12
+1 14 -33173 -262144 0;
+#X obj 688 182 cnv 15 200 40 empty empty Ch11_Dynamic_Range_CTRL 20
+12 1 14 -33173 -262144 0;
+#N canvas 0 23 1440 842 MiniProject-Ideas-Click-to-See 0;
+#X obj 17 17 cnv 15 200 40 empty empty Click-it 20 12 1 14 -33173 -262144
+0;
+#X obj 17 181 cnv 15 200 40 empty empty Mousalizer 20 12 1 14 -33173
+-262144 0;
+#X obj 17 229 Mousalizer;
+#X obj 16 343 cnv 15 200 40 empty empty Microphone 20 12 1 14 -33173
+-262144 0;
+#X obj 17 256 output~;
+#X text 15 319 Press & move your mice;
+#X connect 2 0 4 0;
+#X connect 2 0 4 1;
+#X restore 918 229 pd MiniProject-Ideas-Click-to-See;
+#X text 1013 253 Procedural Audio;
+#X text 28 554 Mark Dourado mdoura15@student.aau.dk;
+#X connect 57 0 56 0;
+#X connect 60 0 56 1;

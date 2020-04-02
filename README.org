@@ -11,13 +11,21 @@ PD starting toolbox for MED4 SMC
 - unauthorized + zexy + MouseState: cyclonev03-alpha1
 - pddp
 
+
 * PROJECT
 
 ** TODO Make the repo fully compatible with PD-VANILLA
 
-** TODO Adjust the contents rather then sessions
+** DONE Adjust the contents rather then sessions
+   CLOSED: [2020-04-02 Thu 15:06]
 
 Christensen, Mads Græsbøll. Introduction to Audio Processing, 2018.
+
+** Put more content to chapters
+
+*** Ch10 Audio EQ
+
+*** Implement Mark's idea of Lego / Full Exercises
 
 * Credits
 
